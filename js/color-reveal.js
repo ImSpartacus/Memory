@@ -20,11 +20,9 @@ function revealColor(){
 	// uptick guess counter
 		
 	if(selectedCards.length > 1){
-		setTimeout(resetBoard,500);
-		checkForPair();
 		freezeClicks();
+		checkForPair();
 	}
-
 }
 
 function checkForPair(){
@@ -35,8 +33,18 @@ function checkForPair(){
 			console.log(selectedCards);
 			selectedCards[l].classList.add('match-card-found');
 			selectedCards[l].classList.remove('match-card');
-			selectedCards[l].classList.remove('selected');
 		}
+		var m;
+		var matchFound = document.getElementsByClassName("match-card-found");
+		for (m = 0; m < matchFound.length; m++) {
+			matchFound[m].classList.remove('selected');
+		}
+		var n;
+		for (n = 0; n < matchCards.length; n++) {
+			matchCards[n].style.pointerEvents = 'auto';
+		}
+	} else {
+		setTimeout(resetBoard,1000);
 	}
 }
 
@@ -53,7 +61,7 @@ function resetBoard(){
 	var i;
 	for (i = 0; i < matchCards.length; i++) {
 		matchCards[i].style.backgroundColor = '#cccccc';
-		matchCards[i].classList.remove('selected');
 		matchCards[i].style.pointerEvents = 'auto';
+		matchCards[i].classList.remove('selected');
 	}
 }
