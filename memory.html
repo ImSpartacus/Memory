@@ -23,6 +23,13 @@
 			<div class="card-column"><a class="match-card" onClick="revealColor()"></a> <a class="match-card" onClick="revealColor()"></a> <a class="match-card" onClick="revealColor()"></a> <a class="match-card" onClick="revealColor()"></a></div>
 		</div>
 	</div>
+	<div id="game-complete">
+		<div id="completed-wrapper">
+			<h1>You did it!</h1>
+			<p>Completed with <span id="guess-counter"></span> moves.</p>
+			<button onClick="reloadPage()">Play Again</button>
+		</div>
+	</div>
 	
 	<script type="text/javascript" src="js/color-randomizer.js"></script>
 	<script type="text/javascript" src="js/card-resizing.js"></script>

@@ -1,6 +1,7 @@
 
 var matchCards = document.getElementsByClassName("match-card");
 var selectedCards = document.getElementsByClassName("selected");
+var matchFound = document.getElementsByClassName("match-card-found");
 var selectedCardValues = [];
 var colors = [
 	'ff7676',	//Red
@@ -14,3 +15,7 @@ var colors = [
 ];
 var colors2 = [];
 var guessCounter = 0;
+
+function reloadPage(){
+	window.location.reload();
+}

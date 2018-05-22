@@ -15,18 +15,23 @@ function revealColor(){
 	
 	clickedCard.classList.add('selected');
 	// Add selected class for any styling
-	
-	guessCounter = guessCounter + 1;
-	// uptick guess counter
-		
+			
 	if(selectedCards.length > 1){
 		freezeClicks();
 		checkForPair();
+	}
+	
+	if(matchFound.length > 15){
+		gameComplete();
 	}
 }
 
 function checkForPair(){
 	"use strict";
+	
+	guessCounter = guessCounter + 1;
+	// uptick guess counter
+	
 	if(selectedCardValues[0] == selectedCardValues[1]){
 		var l;
 		for(l = 0; l < selectedCards.length; l++) {
@@ -35,7 +40,6 @@ function checkForPair(){
 			selectedCards[l].classList.remove('match-card');
 		}
 		var m;
-		var matchFound = document.getElementsByClassName("match-card-found");
 		for (m = 0; m < matchFound.length; m++) {
 			matchFound[m].classList.remove('selected');
 		}
@@ -64,4 +68,10 @@ function resetBoard(){
 		matchCards[i].style.pointerEvents = 'auto';
 		matchCards[i].classList.remove('selected');
 	}
+}
+
+function gameComplete(){
+	document.getElementById("guess-counter").innerHTML = guessCounter;
+	document.getElementById("game-complete").style.visibility = 'visible';
+	document.getElementById("game-complete").style.opacity = 1;
 }
