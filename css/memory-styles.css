@@ -61,12 +61,16 @@ body, div{
 }
 
 .match-card:hover,
+.match-card:focus,
+.match-card:active,
 .selected{
 	box-shadow: 0px 5px 12px -1px rgba(0,0,0,0.4);
 	transform: scale(1.02);
 }
 
-.match-card:hover{
+.match-card:hover,
+.match-card:focus,
+.match-card:active{
 	opacity:0.9;
 }
 
